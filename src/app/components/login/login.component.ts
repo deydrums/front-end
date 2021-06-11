@@ -28,8 +28,10 @@ export class LoginComponent implements OnInit {
     this.user = new User(1,'','','ROLE_USER','','','','');
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this.logout();
   }
+
   onSubmit(form:any){
     this._userService.signup(this.user).subscribe(
       response =>{
@@ -52,5 +54,17 @@ export class LoginComponent implements OnInit {
         this.error = error.error.message;
       }
     );
+  }
+
+  logout() {
+    console.log("bye");
+    this._userService.logout(this._userService.getToken()).subscribe(
+      response =>{
+        console.log(response);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 }
