@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
+  page_title: string;
+  constructor() {
+    this.page_title = "Pagina de inicio";
+   }
   ngOnInit(): void {
   }
 
