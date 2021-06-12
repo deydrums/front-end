@@ -32,12 +32,12 @@ export class UserService {
     //     return this._http.post(this.url+'auth/logout',{headers:headers});
     // }
     logout(gettoken:any = null):Observable<any>{
-         this.token = 'Bearer ' + gettoken;
-         console.log(this.token);
-         let headers = new HttpHeaders().set('Authorization',  this.token).set('Content-Type', 'application/x-www-form-urlencoded');
-          console.log(headers);
-          return this._http.post(this.url+'auth/logout',{headers:headers});
-            
+        this.token = 'Bearer ' + this.getToken();
+        console.log(this.token);
+        let headers = new HttpHeaders().set('Authorization',  this.token);
+        console.log(headers);
+        
+        return this._http.get(this.url+'auth/logout',{headers:headers});
     }
     getIdentity(){
         let identity = JSON.parse(localStorage.getItem('identity') || '{}');

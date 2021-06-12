@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
    }
 
    ngOnInit(): void {
-    this.logout();
   }
 
   onSubmit(form:any){
@@ -56,15 +55,5 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  logout() {
-    console.log("bye");
-    this._userService.logout(this._userService.getToken()).subscribe(
-      response =>{
-        console.log(response);
-      },
-      error=>{
-        console.log(error);
-      }
-    )
-  }
+
 }

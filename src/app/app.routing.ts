@@ -5,13 +5,14 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'inicio', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'logout/:sure', component: LoginComponent},
+    {path: 'logout', component: LogoutComponent},
     {path: 'register', component: RegisterComponent},
     {path: '**', component: ErrorComponent}
 ];
