@@ -14,7 +14,7 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav navbar-right">
+        <ul class="navbar-nav navbar-right"  *ngIf="!identity || !identity.name">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" [routerLink]="'register'">Registro</a>
               </li>
